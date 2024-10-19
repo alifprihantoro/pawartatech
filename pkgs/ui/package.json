@@ -1,0 +1,38 @@
+{
+  "name": "ui",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "lint": "eslint ./src/**/*.ts"
+  },
+  "main": "./src/pages/home.ts",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-a11y": "^8.3.6",
+    "@storybook/addon-docs": "^8.3.6",
+    "@storybook/addon-essentials": "^8.3.6",
+    "@storybook/addon-interactions": "^8.3.6",
+    "@storybook/addon-links": "^8.3.6",
+    "@storybook/addon-mdx-gfm": "^8.3.6",
+    "@storybook/addon-themes": "^8.3.6",
+    "@storybook/blocks": "^8.3.6",
+    "@storybook/html": "^8.3.6",
+    "@storybook/html-vite": "^8.3.6",
+    "chromatic": "^10.9.6",
+    "eslint-plugin-lit": "^1.15.0",
+    "eslint-plugin-lit-a11y": "1.1.0-next.1",
+    "eslint-plugin-wc": "^2.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.3.6",
+    "vite": "^5.4.9"
+  },
+  "dependencies": {
+    "@storybook/addon-console": "^3.0.0",
+    "@storybook/test": "^8.3.6",
+    "configs": "workspace:^"
+  }
+}

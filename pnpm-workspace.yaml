@@ -1,0 +1,4 @@
+packages:
+  # ui component and storybook
+  - 'web'
+  - 'pkgs/*'
