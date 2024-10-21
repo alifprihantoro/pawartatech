@@ -1,6 +1,6 @@
-import '../dev.css'
+import '../src/assets/css/main.css'
 import { withThemeByDataAttribute } from '@storybook/addon-themes'
-import { DocsPage } from '@storybook/addon-docs/blocks';
+import { DocsPage } from '@storybook/addon-docs/blocks'
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
