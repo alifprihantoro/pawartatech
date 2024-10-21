@@ -1,5 +1,6 @@
 import Card, { TCardArgs } from '../../components/Card'
 import ListTags from '../../components/ListTags'
+import LoadMore from '../../components/pagenation/LoadMore'
 
 export default function Home({
   CardArgs,
@@ -7,5 +8,13 @@ export default function Home({
   CardArgs: TCardArgs
   ListTagsArgs: string
 }) {
-  return ListTags() + Card(CardArgs)
+  const Article = []
+  for (let i = 0; i <= 5; i++) {
+    Article.push(Card(CardArgs))
+  }
+  return html`
+    ${ListTags()}
+    <div class="w-full my-12">${Article.join('')}</div>
+    <div class="text-center m-6">${LoadMore()}</div>
+  `
 }
