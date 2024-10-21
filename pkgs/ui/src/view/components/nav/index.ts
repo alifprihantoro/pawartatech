@@ -3,7 +3,7 @@ import listHtml from './list'
 const TITLE = 'PAWARTA TECH'
 export default function () {
   return html`
-    <div class="navbar bg-base-300">
+    <div class="navbar bg-base-200">
       <button class="btn btn-ghost text-xl">${TITLE}</button>
       <nav
         class="fixed bottom-0 left-0 z-50 w-full

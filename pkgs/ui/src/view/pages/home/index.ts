@@ -1,5 +1,4 @@
 import Card, { TCardArgs } from '../../components/Card'
-import ListTags from '../../components/ListTags'
 import LoadMore from '../../components/pagenation/LoadMore'
 
 export default function Home({
@@ -13,7 +12,6 @@ export default function Home({
     Article.push(Card(CardArgs))
   }
   return html`
-    ${ListTags()}
     <div class="w-full my-12">${Article.join('')}</div>
     <div class="text-center m-6">${LoadMore()}</div>
   `

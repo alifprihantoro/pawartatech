@@ -1,11 +1,10 @@
 import Layouts from '../../layouts'
-import home from './'
+import Home from './'
 
 export default {
-  title: 'Pages/Home',
   render: () => {
     return Layouts(
-      home({
+      Home({
         CardArgs: {
           title: 'Lorem ipsum dolor sit amet.',
           img: 'https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp',
@@ -18,4 +17,4 @@ export default {
     )
   },
 }
-export const Home = {}
+export const home = {}

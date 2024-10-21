@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* next prev */
+.NextPrev {
+  @apply flex items-center justify-between w-full p-3;
+  & span {
+    @apply btn bg-base-300;
+  }
+  & h2 {
+    @apply text-lg font-bold uppercase font-Rokkit;
+  }
+}

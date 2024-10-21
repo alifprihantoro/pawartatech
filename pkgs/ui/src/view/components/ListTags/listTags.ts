@@ -18,5 +18,5 @@ const ListTags = [
 ]
 
 export default ListTags.map(({ link, name }) => {
-  return html` <a href="${link}" class="btn btn-primary btn-sm"> ${name} </a> `
+  return html` <a href="${link}" class="btn bg-base-300 btn-sm"> ${name} </a> `
 }).join('')

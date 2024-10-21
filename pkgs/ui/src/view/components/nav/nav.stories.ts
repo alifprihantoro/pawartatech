@@ -1,6 +1,6 @@
-import nav from './'
+import Nav from './'
 
 export default {
-  render: nav,
+  render: Nav,
 }
-export const Nav = {}
+export const nav = {}
