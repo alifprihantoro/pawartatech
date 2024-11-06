@@ -23,9 +23,9 @@ const ListNav = [
 
 export default ListNav.map(({ icon, link, name }) => {
   return html`
-    <li class="m-auto align-middle">
+    <li class="m-auto align-middle max-w-full">
       <a
-        href="#${link}"
+        href="${link}"
         class="m-1 capitalize font-Rokkit font-bold flex
         justify-center items-center flex-col md:flex-row "
         data-tip="${name}">

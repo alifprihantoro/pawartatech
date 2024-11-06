@@ -1,75 +1,29 @@
-# web
+# Pawarta Tech - Web News
+Simply template for blogger/blogspot tech news.
 
-personal web.
-
-## structure project
-
-> this project use monorepo.
-
-- apps : (for web/api)
-  - web
-- packages : (shared packages)
-  - html : for hilight
-  - configs : configuration ts,eslint,tailwind
-  - ui : component/ui and storybook
-  - style : compile css tailwind
-- e2e : test e2e
-
-## install
-
+## Install
 ```bash
-git clone https://github.com/alifprihantoro/web
-cd web
-pnpm i --lockfile-only
-pnpm dev:web
+pnpm install
+pnpm build
+# or
+pnpm dev
 ```
 
-## command
+## Tech
 
-- build => build entire project
-- dev => build entire project in dev mode
-- test => test
-- lint => ceck lint with eslint
-- story => build all story
-- publish => lint, test, build web with storybook then move into branch result
-- publish:turbo => like publish but use turborepo
-- e2e => test e2e
+### Why Astro
+Astro allows for the creation of fast, modern websites with ease. It supports partial hydration, meaning only the necessary JavaScript is loaded, which improves performance. Additionally, Astro's flexibility means you can easily switch from Blogger to Node.js or other providers without being locked into a specific vendor.
 
-## branch
+### Why Blogger
+Blogger is a free platform that offers stability and security. It's a reliable choice for hosting content without worrying about server maintenance or costs.
 
-- master (main branch)
-- publish : trigger ci to publish
-- result : result compiled (rollback purpose)
-- refactor/\* : for refactory code changes
-- feat/\* : for add feature
-- beta/\* : for experimental
+### Why Tailwind
+Tailwind CSS is a utility-first CSS framework that is highly customizable and easy to integrate with any JavaScript framework. It also supports Language Server Protocol (LSP), providing intelligent code completion and error checking, which enhances the development experience.
 
-## technology, Tools and Other relate
+### Why Daisy
+DaisyUI is a component library that works seamlessly with Tailwind CSS. It provides a set of pre-designed components that are simple to use and easy to customize, speeding up the development process and ensuring a consistent design.
 
-### astrojs
-
-Astojs is agnostic framework can work with any ui framework like react, vue, etc. And easy to use and debug. cause astrojs use vite for bundler. Why not next? cause i not use any ui framework. But still use it if i want.
-
-### pnpm
-
-pnpm is good for memory size, cause use link rather than copy.
-
-### monorepo
-
-why i'm using monorepo, but still split content, public and dist. I'm using monorepo just for learn. split public and content to different repo because i wont have many commit in repo web. and any can contribute easy.
-
-### storybook
-
-for documentation ui, test and show changes ui every pull request.
-
-### tailwind with daisy ui
-
-because i want fast and have lsp. so I still have completion for class name and can hover it.
-
-### vite
-
-easy configs plugins and create custom plugins.
-
-### vercel
-
-for easy deploy and free.
+## TODO
+- add tags
+- responsive on pc
+- optimize dev mode

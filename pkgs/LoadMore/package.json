@@ -1,0 +1,51 @@
+{
+  "name": "loadmore",
+  "version": "1.0.0",
+  "description": "vite plugin for html literal and ",
+  "scripts": {
+    "build": "tsc && BUILD=true node cmd.mjs",
+    "dev": "tsc & node cmd.mjs",
+    "preinstall": "npx only-allow pnpm",
+    "lint": "eslint . --report-unused-disable-directives",
+    "released": "pnpm build && pnpm publish --access public",
+    "test": "vitest ./test"
+  },
+  "keywords": [
+    "minify",
+    "css",
+    "html",
+    "js",
+    "javascript",
+    "typescript",
+    "routes"
+  ],
+  "author": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./type": {
+      "types": "./dist/types.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.20.1",
+    "vite": "^5.4.8",
+    "vitest": "^2.1.2",
+    "configs": "workspace:^",
+    "ui": "workspace:^"
+  }
+}

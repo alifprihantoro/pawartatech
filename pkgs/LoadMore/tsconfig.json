@@ -1,0 +1,23 @@
+{
+  "extends": "configs/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ES2015",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "emitDeclarationOnly": true,
+    "noEmit": false
+  },
+  "include": [
+    "src",
+    "./type.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

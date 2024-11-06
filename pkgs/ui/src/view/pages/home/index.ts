@@ -3,12 +3,17 @@ import LoadMore from '../../components/pagenation/LoadMore'
 
 export default function Home({
   CardArgs,
+  isStoryBook,
 }: {
   CardArgs: TCardArgs
-  ListTagsArgs: string
+  isStoryBook: boolean
 }) {
   const Article = []
-  for (let i = 0; i <= 5; i++) {
+  if (isStoryBook) {
+    for (let i = 0; i <= 5; i++) {
+      Article.push(Card(CardArgs))
+    }
+  } else {
     Article.push(Card(CardArgs))
   }
   return html`

@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "getContent": "git clone https://github.com/alifprihantoro/new-content.git --depth=1 contents",
-    "getRender": "git clone https://github.com/alifprihantoro/new-content.git --depth=1 contents",
-    "init": "concurrently \"pnpm getContent\" \"pnpm getRender\""
+    "build": "pnpm --filter=loadmore build && pnpm --filter=blogger build",
+    "dev": "pnpm --filter=loadmore dev & pnpm --filter=blogger dev"
   },
   "workspaces": [
     "web/*",
