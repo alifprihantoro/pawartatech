@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm --filter=loadmore build && pnpm --filter=blogger build",
-    "dev": "pnpm --filter=loadmore dev & pnpm --filter=blogger dev"
+    "build": "bash ./bin/build.sh",
+    "dev": "bash ./bin/dev.sh"
   },
   "workspaces": [
     "web/*",

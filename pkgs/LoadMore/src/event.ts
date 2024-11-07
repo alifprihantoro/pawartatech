@@ -1,22 +1,22 @@
 import RenderLoadmore from './Render'
 
 // TODO: multiple author
-export default async function LoadMoreEvent() {
-  const [CONTENT_LIST, isNext] = await RenderLoadmore()
+export default async function LoadMoreEvent(PAGE_NUM: number) {
+  const [CONTENT_LIST, isNext] = await RenderLoadmore(PAGE_NUM)
   const ElList = document.getElementById('LoadMoreList')
-  const ElListBtn = document.getElementById('LoadMoreListBtn')
+  const ElListBtn = document.getElementById('LoadMoreBtn')
 
-  if (ElListBtn && isNext) {
+  if (ElListBtn && !isNext) {
     ElListBtn.remove()
   }
 
   if (ElList) {
-    ElList.innerHTML = CONTENT_LIST
-    const ElBtn = document.getElementById('LoadMoreListBtn')
+    ElList.innerHTML += CONTENT_LIST
+    const ElBtn = document.getElementById('LoadMoreBtn')
 
     if (ElBtn) {
       ElBtn.onclick = () => {
-        LoadMoreEvent
+        LoadMoreEvent(PAGE_NUM + 1)
       }
     }
   }

@@ -13,8 +13,8 @@ type TArgsListContent = {
   }[]
 }
 export type TArgsRender = (Args: TArgsListContent) => string
-export default async function RenderLoadmore() {
-  const { LIST_CONTET, isNext } = await getFeed()
+export default async function RenderLoadmore(PAGE_NUM: number) {
+  const { LIST_CONTET, isNext } = await getFeed(PAGE_NUM)
   const ListEl: string[] = LIST_CONTET.map(
     ({ link, summary, author, title }: TArgsListContent) => {
       return Card({
