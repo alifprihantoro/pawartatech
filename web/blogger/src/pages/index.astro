@@ -1,8 +1,6 @@
 ---
-import Layouts from '../layouts'
+import Main from '../layouts'
 import { writeFileSync } from 'fs'
 
-const MainEl = Layouts
-
-writeFileSync('./dist/blogger.xml', MainEl, { encoding: 'utf8' })
+writeFileSync('./dist/blogger.xml', Main, { encoding: 'utf8' })
 ---

@@ -1,12 +1,12 @@
 import myCss from 'ui/src/assets/css/main.css?inline'
 import Layout from 'ui/src/view/layouts'
-import seo from '../component/seo'
-import MainWidget from '../component/widget/main'
-import NotFound from '../component/pages/NotFound'
-import listPost from '../component/pages/List'
-import postContent from '../component/pages/Post'
+import seo from './seo'
+import MainWidget from './widget/main'
+import NotFound from './pages/NotFound'
+import listPost from './pages/List'
+import postContent from './pages/Post'
+import tags from './widget/tags'
 
-// TODO: 404
 export default html`
   <html
     lang="en"
@@ -26,6 +26,7 @@ export default html`
     <body>
       --&gt;&lt;body&gt; ${Layout(`
         <b:if cond='data:blog.pageType != "error_page"'>
+          ${tags}
           ${MainWidget({ postContent })}
           <b:if cond='data:blog.pageType != "item"'>
           ${listPost}

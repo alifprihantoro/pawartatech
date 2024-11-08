@@ -8,6 +8,7 @@ export default html`
       Load More
     </button>
   </div>
+
   <script async type="module">
     //<![CDATA[
     ${script}

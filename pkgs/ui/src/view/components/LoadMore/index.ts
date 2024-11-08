@@ -1,3 +1,3 @@
 export default html`
-  <div id="LoadMoreList">hello</div>
+  <div id="LoadMoreList" class="w-full md:max-w-7xl">hello</div>
 `

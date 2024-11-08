@@ -12,3 +12,11 @@
     @apply text-lg font-bold uppercase font-Rokkit;
   }
 }
+
+/* label */
+#tags ul {
+  @apply w-full flex gap-6 my-6 flex-wrap;
+}
+#tags li {
+  @apply btn bg-base-300 btn-sm;
+}
