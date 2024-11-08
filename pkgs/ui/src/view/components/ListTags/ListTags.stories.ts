@@ -1,23 +1,14 @@
-import listTag from './'
-
 export type TListTags = {
   name: string
   link: string
 }
 
 const ListTags: TListTags[] = [
-  {
-    name: 'label1',
-    link: '/label1',
-  },
-  {
-    name: 'label2',
-    link: '/label2',
-  },
-  {
-    name: 'label3',
-    link: '/label3',
-  },
+  { name: 'tech', link: '/label/tech' },
+  { name: 'sports', link: '/label/sports' },
+  { name: 'weather', link: '/label/weather' },
+  { name: 'health', link: '/label/health' },
+  { name: 'entertainment', link: '/label/entertainment' },
 ]
 const LIST_LABEL = ListTags.map(({ link, name }) => {
   return html`<li>
@@ -28,9 +19,9 @@ const LIST_LABEL = ListTags.map(({ link, name }) => {
 export default {
   render: () => {
     return html`
-      <div id="tags">
+      <div id="tags" class="w-full max-w-full block">
         <ul>
-          ${listTag(LIST_LABEL)}
+          ${LIST_LABEL}
         </ul>
       </div>
     `

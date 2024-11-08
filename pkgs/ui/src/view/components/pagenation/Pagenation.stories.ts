@@ -6,5 +6,5 @@ export const NextPrevPages = {
   render: NextPrev,
 }
 export const LoadMoreBtn = {
-  render: LoadMore,
+  render: () => LoadMore,
 }

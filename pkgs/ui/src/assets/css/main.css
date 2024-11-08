@@ -15,7 +15,7 @@
 
 /* label */
 #tags ul {
-  @apply w-full flex gap-6 my-6 flex-wrap;
+  @apply w-full flex gap-6 my-6 overflow-scroll p-3 bg-base-200;
 }
 #tags li {
   @apply btn bg-base-300 btn-sm;
