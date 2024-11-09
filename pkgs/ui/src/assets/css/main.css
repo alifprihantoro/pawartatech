@@ -20,3 +20,6 @@
 #tags li {
   @apply btn bg-base-300 btn-sm;
 }
+#tags .label {
+  @apply !block;
+}

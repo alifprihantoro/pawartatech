@@ -9,11 +9,10 @@ export default html`
         <b:if cond="data:i&lt;1">
           <script
             expr:src='"/feeds/posts/default/-/" + data:label.name + "?alt=json-in-script&amp;callback=related_results_labels&amp;max-results=3"'
-            rel="preload" />
+            rel="preload"></script>
         </b:if>
       </b:loop>
     </b:if>
-    <b>Baca juga :</b>
     <script>
       removeRelatedDuplicates()
       printRelatedLabels()

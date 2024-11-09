@@ -27,10 +27,10 @@ export default html`
       --&gt;&lt;body&gt; ${Layout(`
         <b:if cond='data:blog.pageType != "error_page"'>
           ${tags}
-          ${MainWidget({ postContent })}
           <b:if cond='data:blog.pageType != "item"'>
           ${listPost}
           </b:if>
+          ${MainWidget({ postContent })}
           <b:else />
           ${NotFound}
         </b:if>
