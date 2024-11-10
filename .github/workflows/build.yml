@@ -4,11 +4,12 @@ on:
   push:
     tags:
       - 'v*'
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      discussions: write
     steps:
     - uses: actions/checkout@v4
     - name: Install pnpm
