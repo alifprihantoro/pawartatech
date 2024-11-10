@@ -9,6 +9,8 @@ pnpm build
 pnpm dev
 ```
 
+> copy/upload file in `web/blogger/dist/blogger.xml`
+
 ## Tech
 
 ### Why Astro
