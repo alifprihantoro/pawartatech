@@ -24,6 +24,5 @@ Tailwind CSS is a utility-first CSS framework that is highly customizable and ea
 DaisyUI is a component library that works seamlessly with Tailwind CSS. It provides a set of pre-designed components that are simple to use and easy to customize, speeding up the development process and ensuring a consistent design.
 
 ## TODO
-- add tags
-- responsive on pc
-- optimize dev mode
+- [ ] optimize dev mode
+- [ ] script dont render block

@@ -9,8 +9,6 @@ export default function MainWidget({ postContent }: TArgs) {
           <b:if cond="!data:mobile">
             <!-- posts -->
             <div class="blog-posts hfeed">
-              <b:include data="top" name="status-message" />
-
               <b:loop values="data:posts" var="post">
                 <b:if
                   cond="data:post.isDateStart and not data:post.isFirstPost">
