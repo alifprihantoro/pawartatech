@@ -9,7 +9,7 @@ pnpm build
 pnpm dev
 ```
 
-> copy/upload file in `web/blogger/dist/blogger.xml`
+> copy/upload file in `web/blogger/dist/blogger.xml` or download in released version, then klick `blogger.xml`
 
 ## Tech
 
