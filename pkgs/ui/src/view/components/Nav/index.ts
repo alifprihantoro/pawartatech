@@ -4,7 +4,9 @@ const TITLE = 'PAWARTA TECH'
 export default function () {
   return html`
     <div class="navbar bg-base-200">
-      <a href="/" class="btn btn-ghost text-xl">${TITLE}</a>
+      <header>
+        <a href="/" class="btn btn-ghost text-xl font-Lato">${TITLE}</a>
+      </header>
       <nav
         class="fixed bottom-0 left-0 z-50 w-full
         flex justify-center items-center

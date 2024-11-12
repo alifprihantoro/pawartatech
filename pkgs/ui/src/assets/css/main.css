@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* default */
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  @apply font-Lato;
+}
+p {
+  @apply font-Rokkit;
+}
+
 /* next prev */
 .NextPrev {
   @apply flex items-center justify-between w-full p-3;
