@@ -32,7 +32,10 @@ export default function MainWidget({ postContent }: TArgs) {
           </b:if>
         </b:includable>
         <b:includable id="post" var="post">
-          <b:if cond='data:blog.pageType == "item"'> ${postContent} </b:if>
+          <b:if
+            cond='data:blog.pageType == "item" || data:blog.pageType == "static_page"'>
+            ${postContent}
+          </b:if>
         </b:includable>
       </b:widget>
     </b:section>
