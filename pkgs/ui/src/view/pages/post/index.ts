@@ -1,3 +1,4 @@
+import Scripts from 'myscript/giscus?raw'
 export default function Post({
   Content,
   title,
@@ -20,6 +21,15 @@ export default function Post({
         ${Content}
       </article>
       <b:if cond='data:blog.pageType != "static_page"'>
+        <button class="btn btn-primary w-full" id="toggle-comment">
+          show comment
+        </button>
+        <div id="content-comment" class="hidden"></div>
+        <script defer>
+          //<![CDATA[
+          ${Scripts}
+          //]]>
+        </script>
         ${NextPrev}
         <h2 class="text-center uppercase font-Rokkit font-bold">Baca Juga :</h2>
         <div class="w-full my-12 ">${RelatedPost}</div>

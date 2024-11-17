@@ -23,7 +23,7 @@ importers:
         version: 8.2.2
       daisyui:
         specifier: ^4.12.14
-        version: 4.12.14(postcss@8.4.49)
+        version: 4.12.14(postcss@8.4.47)
       eslint:
         specifier: ^9.14.0
         version: 9.14.0(jiti@1.21.6)
@@ -58,6 +58,24 @@ importers:
         specifier: ^2.1.2
         version: 2.1.4(@types/node@22.7.7)(terser@5.36.0)
 
+  pkgs/Scripts:
+    devDependencies:
+      configs:
+        specifier: workspace:^
+        version: link:../configs
+      esbuild:
+        specifier: 0.20.1
+        version: 0.20.1
+      ui:
+        specifier: workspace:^
+        version: link:../ui
+      vite:
+        specifier: ^5.4.8
+        version: 5.4.11(@types/node@22.7.7)(terser@5.36.0)
+      vitest:
+        specifier: ^2.1.2
+        version: 2.1.4(@types/node@22.7.7)(terser@5.36.0)
+
   pkgs/configs: {}
 
   pkgs/ui:
@@ -74,6 +92,9 @@ importers:
       configs:
         specifier: workspace:^
         version: link:../configs
+      myscript:
+        specifier: workspace:^
+        version: link:../Scripts
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^1.9.0
@@ -159,9 +180,9 @@ importers:
       astro:
         specifier: ^4.16.12
         version: 4.16.12(@types/node@22.7.7)(rollup@4.26.0)(terser@5.36.0)(typescript@5.6.3)
-      loadmore:
+      myscript:
         specifier: workspace:^
-        version: link:../../pkgs/LoadMore
+        version: link:../../pkgs/Scripts
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.14
@@ -5657,13 +5678,13 @@ snapshots:
       chai: 5.1.2
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.4(vite@5.4.9(@types/node@22.7.7)(terser@5.36.0))':
+  '@vitest/mocker@2.1.4(vite@5.4.11(@types/node@22.7.7)(terser@5.36.0))':
     dependencies:
       '@vitest/spy': 2.1.4
       estree-walker: 3.0.3
       magic-string: 0.30.12
     optionalDependencies:
-      vite: 5.4.9(@types/node@22.7.7)(terser@5.36.0)
+      vite: 5.4.11(@types/node@22.7.7)(terser@5.36.0)
 
   '@vitest/pretty-format@2.0.5':
     dependencies:
@@ -6226,12 +6247,12 @@ snapshots:
 
   culori@3.3.0: {}
 
-  daisyui@4.12.14(postcss@8.4.49):
+  daisyui@4.12.14(postcss@8.4.47):
     dependencies:
       css-selector-tokenizer: 0.8.0
       culori: 3.3.0
       picocolors: 1.1.1
-      postcss-js: 4.0.1(postcss@8.4.49)
+      postcss-js: 4.0.1(postcss@8.4.47)
     transitivePeerDependencies:
       - postcss
 
@@ -7724,11 +7745,6 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.4.47
 
-  postcss-js@4.0.1(postcss@8.4.49):
-    dependencies:
-      camelcase-css: 2.0.1
-      postcss: 8.4.49
-
   postcss-load-config@4.0.2(postcss@8.4.47):
     dependencies:
       lilconfig: 3.1.2
@@ -8564,7 +8580,7 @@ snapshots:
       cac: 6.7.14
       debug: 4.3.7
       pathe: 1.1.2
-      vite: 5.4.9(@types/node@22.7.7)(terser@5.36.0)
+      vite: 5.4.11(@types/node@22.7.7)(terser@5.36.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8603,7 +8619,7 @@ snapshots:
   vitest@2.1.4(@types/node@22.7.7)(terser@5.36.0):
     dependencies:
       '@vitest/expect': 2.1.4
-      '@vitest/mocker': 2.1.4(vite@5.4.9(@types/node@22.7.7)(terser@5.36.0))
+      '@vitest/mocker': 2.1.4(vite@5.4.11(@types/node@22.7.7)(terser@5.36.0))
       '@vitest/pretty-format': 2.1.4
       '@vitest/runner': 2.1.4
       '@vitest/snapshot': 2.1.4
@@ -8619,7 +8635,7 @@ snapshots:
       tinyexec: 0.3.1
       tinypool: 1.0.1
       tinyrainbow: 1.2.0
-      vite: 5.4.9(@types/node@22.7.7)(terser@5.36.0)
+      vite: 5.4.11(@types/node@22.7.7)(terser@5.36.0)
       vite-node: 2.1.4(@types/node@22.7.7)(terser@5.36.0)
       why-is-node-running: 2.3.0
     optionalDependencies:

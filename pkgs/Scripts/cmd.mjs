@@ -5,13 +5,12 @@ const bundleFile = async () => {
   const getPkg = JSON.parse(readFileSync('./package.json'))
 
   const Opts = {
-    entryPoints: ['src/index.ts'],
+    entryPoints: ['src/loadmore/index.ts', 'src/gisqus.ts'],
     bundle: true,
     minify: true,
     outdir: 'dist',
     platform: 'node',
     format: 'esm',
-    outExtension: { '.js': '.mjs' },
     external: [
       'vite',
       ...Object.keys(getPkg.dependencies || {}),
@@ -20,9 +19,6 @@ const bundleFile = async () => {
   }
 
   await build(Opts)
-  Opts.format = 'cjs'
-  Opts.outExtension = { '.js': '.cjs' }
-  await build(Opts)
 
   const replaceHtml = (PATH) => {
     const getResult = readFileSync(PATH, 'utf8')
@@ -30,8 +26,7 @@ const bundleFile = async () => {
     writeFileSync(PATH, result)
   }
 
-  replaceHtml('./dist/index.mjs')
-  replaceHtml('./dist/index.cjs')
+  replaceHtml('./dist/loadmore/index.js')
 }
 
 const isBuild = process.env.BUILD === 'true'

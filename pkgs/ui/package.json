@@ -39,6 +39,7 @@
     "@muryp/vite-html": "^1.0.6",
     "@storybook/addon-console": "^3.0.0",
     "@storybook/test": "^8.3.6",
-    "configs": "workspace:^"
+    "configs": "workspace:^",
+    "myscript": "workspace:^"
   }
 }

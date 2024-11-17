@@ -1,5 +1,5 @@
 {
-  "name": "loadmore",
+  "name": "myscript",
   "version": "1.0.0",
   "description": "vite plugin for html literal and ",
   "scripts": {
@@ -25,13 +25,13 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+    "./loadmore": {
+      "types": "./dist/loadmore/index.d.ts",
+      "import": "./dist/loadmore/index.js"
     },
-    "./type": {
-      "types": "./dist/types.d.ts"
+    "./giscus": {
+      "types": "./dist/gisqus.d.ts",
+      "import": "./dist/gisqus.js"
     }
   },
   "files": [
