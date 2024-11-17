@@ -1,4 +1,4 @@
-import Scripts from 'myscript/giscus?raw'
+import Scripts from 'myscripts/giscus?raw'
 export default function Post({
   Content,
   title,

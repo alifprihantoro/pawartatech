@@ -1,4 +1,4 @@
-import script from 'myscript/loadmore?raw'
+import script from 'myscripts/loadmore?raw'
 
 export default html`
   <div id="LoadMoreList"></div>

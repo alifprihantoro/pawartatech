@@ -1,2 +1,2 @@
-pnpm --filter=myscript build
+pnpm --filter=myscripts build
 pnpm --filter=blogger build

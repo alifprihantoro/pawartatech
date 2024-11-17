@@ -40,24 +40,6 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
 
-  pkgs/LoadMore:
-    devDependencies:
-      configs:
-        specifier: workspace:^
-        version: link:../configs
-      esbuild:
-        specifier: 0.20.1
-        version: 0.20.1
-      ui:
-        specifier: workspace:^
-        version: link:../ui
-      vite:
-        specifier: ^5.4.8
-        version: 5.4.9(@types/node@22.7.7)(terser@5.36.0)
-      vitest:
-        specifier: ^2.1.2
-        version: 2.1.4(@types/node@22.7.7)(terser@5.36.0)
-
   pkgs/Scripts:
     devDependencies:
       configs:
@@ -92,7 +74,7 @@ importers:
       configs:
         specifier: workspace:^
         version: link:../configs
-      myscript:
+      myscripts:
         specifier: workspace:^
         version: link:../Scripts
     devDependencies:
@@ -180,7 +162,7 @@ importers:
       astro:
         specifier: ^4.16.12
         version: 4.16.12(@types/node@22.7.7)(rollup@4.26.0)(terser@5.36.0)(typescript@5.6.3)
-      myscript:
+      myscripts:
         specifier: workspace:^
         version: link:../../pkgs/Scripts
       tailwindcss:
