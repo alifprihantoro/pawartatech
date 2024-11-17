@@ -27,11 +27,13 @@
   "exports": {
     "./loadmore": {
       "types": "./dist/loadmore/index.d.ts",
-      "import": "./dist/loadmore/index.js"
+      "import": "./dist/loadmore/index.mjs",
+      "require": "./dist/loadmore/index.cjs"
     },
     "./giscus": {
       "types": "./dist/gisqus.d.ts",
-      "import": "./dist/gisqus.js"
+      "import": "./dist/gisqus.mjs",
+      "require": "./dist/gisqus.cjs"
     }
   },
   "files": [

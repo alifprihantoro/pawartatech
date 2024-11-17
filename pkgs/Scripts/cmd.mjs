@@ -11,6 +11,7 @@ const bundleFile = async () => {
     outdir: 'dist',
     platform: 'node',
     format: 'esm',
+    outExtension: { '.js': '.mjs' },
     external: [
       'vite',
       ...Object.keys(getPkg.dependencies || {}),
@@ -19,6 +20,9 @@ const bundleFile = async () => {
   }
 
   await build(Opts)
+  Opts.format = 'cjs'
+  Opts.outExtension = { '.js': '.cjs' }
+  await build(Opts)
 
   const replaceHtml = (PATH) => {
     const getResult = readFileSync(PATH, 'utf8')
@@ -26,7 +30,8 @@ const bundleFile = async () => {
     writeFileSync(PATH, result)
   }
 
-  replaceHtml('./dist/loadmore/index.js')
+  replaceHtml('./dist/loadmore/index.mjs')
+  replaceHtml('./dist/loadmore/index.cjs')
 }
 
 const isBuild = process.env.BUILD === 'true'
