@@ -7,8 +7,6 @@ import listPost from './pages/List'
 import postContent from './pages/Post'
 import tags from './widget/tags'
 
-//TODO : link nav
-// seo (search engine crawl google, bing,etc)
 export default html`
   <html
     lang="en"
@@ -29,8 +27,10 @@ export default html`
       --&gt;&lt;body&gt; ${Layout(`
         <b:if cond='data:blog.pageType != "error_page"'>
           ${tags}
-          <b:if cond='data:blog.pageType == "archive"'>
+          <b:if cond='data:blog.pageType != "item"'>
+          <b:if cond='data:blog.pageType != "static_page"'>
           ${listPost}
+          </b:if>
           </b:if>
           ${MainWidget({ postContent })}
           <b:else />
