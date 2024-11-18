@@ -3,12 +3,18 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "postCreateCommand": "pnpm i && pnpm dev",
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.node-debug2",
-        "ms-vscode.vscode-typescript-next",
-        "esbenp.prettier-vscode"
+        "astro-build.astro-vscode",
+        "pflannery.vscode-versionlens",
+        "bradlc.vscode-tailwindcss",
+        "steoates.autoimport",
+        "ms-azuretools.vscode-docker",
+        "EditorConfig.EditorConfig",
+        "dbaeumer.vscode-eslint",
+        "christian-kohler.path-intellisense"
       ]
     }
   }

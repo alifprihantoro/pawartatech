@@ -1,19 +1,16 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:22
+FROM node:20-alpine
 
-# Install pnpm
-RUN npm install -g pnpm@9
+WORKDIR /app
 
-# Install Neovim
-RUN apt-get update && apt-get install -y neovim
+RUN apk update && \
+  apk add git && \
+  apk add github-cli && \
+  apk add openssh && \
+  apk add zsh && \
+  apk add curl && \
+  npm i -g pnpm
 
-# Install Git
-RUN apt-get install -y git
-
-# Install fzf
-RUN apt-get install -y fzf
-
-# Install lsd
-RUN apt-get install -y lsd
+SHELL ["/bin/zsh", "-c"]
 
 # Clone dotconf repository and update zshrc
 RUN git clone https://github.com/alifprihantoro/dotconf ~/.dotconf && echo 'source ~/.dotconf/zshrc' >> ~/.zshrc
