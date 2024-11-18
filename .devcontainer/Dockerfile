@@ -1,13 +1,7 @@
-FROM node:20-alpine
+FROM mcr.microsoft.com/devcontainers/typescript-node:22
 
-WORKDIR /app
-
-RUN apk update && \
-  apk add git && \
-  apk add github-cli && \
-  apk add openssh && \
-  apk add zsh && \
-  apk add curl && \
+RUN apt update && apt upgrade &&\
+  apt-get git github-cli openssh zsh curl &&\
   npm i -g pnpm
 
 SHELL ["/bin/zsh", "-c"]

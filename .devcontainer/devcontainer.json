@@ -1,10 +1,16 @@
 {
-  "name": "Pawarta Tech Dev ENV",
+  "name": "Contribute to Pawarta Tech",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "pnpm i && pnpm dev",
+  "postCreateCommand": "pnpm build",
+  "waitFor": "postCreateCommand",
   "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
@@ -16,11 +22,6 @@
         "dbaeumer.vscode-eslint",
         "christian-kohler.path-intellisense"
       ]
-    }
-  },
-  "features": {
-    "ghcr.io/devcontainers/features/sshd:1": {
-      "version": "latest"
     }
   }
 }
