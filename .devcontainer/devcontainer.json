@@ -3,8 +3,6 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "pnpm build",
-  "waitFor": "postCreateCommand",
   "customizations": {
     "codespaces": {
       "openFiles": [
