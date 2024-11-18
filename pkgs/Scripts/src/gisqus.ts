@@ -1,15 +1,15 @@
 ;(function () {
   let isClick = false
+  let isHide = true
   const ELEMENT_COMMENT = document.getElementById('content-comment')!
   const BtnToggle = document.getElementById('toggle-comment')!
   BtnToggle.onclick = () => {
     ELEMENT_COMMENT.classList.toggle('hidden')
-    let isHide = true
     if (isHide) {
-      isClick = false
+      isHide = false
       BtnToggle.innerHTML = 'Hide Comments'
     } else {
-      isClick = true
+      isHide = true
       BtnToggle.innerHTML = 'Show Comments'
     }
     if (!isClick) {

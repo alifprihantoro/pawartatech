@@ -74,9 +74,6 @@ importers:
       configs:
         specifier: workspace:^
         version: link:../configs
-      myscripts:
-        specifier: workspace:^
-        version: link:../Scripts
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^1.9.0

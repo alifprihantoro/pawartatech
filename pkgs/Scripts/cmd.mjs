@@ -34,6 +34,7 @@ if (isBuild) {
   bundleFile()
   console.log('success build...')
 } else {
+  bundleFile()
   watch('./src', (_, filename) => {
     if (filename) {
       bundleFile()
