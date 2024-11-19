@@ -10,6 +10,14 @@
       ]
     },
     "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/bin/zsh"
+          }
+        }
+      },
       "extensions": [
         "astro-build.astro-vscode",
         "pflannery.vscode-versionlens",
@@ -20,6 +28,11 @@
         "dbaeumer.vscode-eslint",
         "christian-kohler.path-intellisense"
       ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
     }
   }
 }
