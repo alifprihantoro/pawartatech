@@ -1,5 +1,5 @@
 import Comment from '../../components/Comment'
-import Scripts from 'myscripts/giscus?raw'
+import Scripts from 'mygisqus?raw'
 
 export default function Post({
   Content,

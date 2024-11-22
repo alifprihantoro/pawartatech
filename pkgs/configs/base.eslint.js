@@ -1,19 +1,17 @@
 // eslint-disable-next-line no-undef
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
+  files: ['src/**/*.ts'],
+  env: {
+    browser: true,
+    es2021: true,
   },
-  'extends': [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   parser: '@typescript-eslint/parser',
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'sourceType': 'module',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  'plugins': ['@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     'prefer-template': ['error'],
@@ -23,18 +21,9 @@ module.exports = {
     'no-mixed-spaces-and-tabs': ['error'],
     'camelcase': ['error'],
     'indent': ['error', 2],
-    'linebreak-style': [
-      'error',
-      'unix',
-    ],
-    'quotes': [
-      'error',
-      'single',
-    ],
-    'semi': [
-      'error',
-      'never',
-    ],
+    'linebreak-style': ['error', 'unix'],
+    'quotes': ['error', 'single'],
+    'semi': ['error', 'never'],
     'no-console': ['warn'],
     'no-alert': ['warn'],
   },

@@ -1,23 +1,27 @@
 import RenderLoadmore from './Render'
-import LoadMore from 'ui/src/view/components/pagenation/LoadMore'
-import Loading from 'ui/src/view/components/Loading'
+import LoadMoreBtn from 'ui/src/view/components/pagenation/LoadMore'
 
-// TODO: multiple author
 export default async function LoadMoreEvent(PAGE_NUM: number) {
   const ElList = document.getElementById('LoadMoreList')!
   const ElListBtn = document.getElementById('LoadMoreBtn')!
-  const OLD_EL = ElList.innerHTML
+  let OLD_EL = ElList.innerHTML
 
-  ElList.innerHTML = Loading
-  ElListBtn.innerHTML = ''
+  if (PAGE_NUM > 1) {
+    ElList.innerHTML = ''
+    ElListBtn.innerHTML = ''
+  } else {
+    OLD_EL = ''
+  }
 
   const [CONTENT_LIST, isNext] = await RenderLoadmore(PAGE_NUM)
   ElList.innerHTML = OLD_EL + CONTENT_LIST
 
   if (isNext) {
-    ElListBtn.innerHTML = LoadMore
+    ElListBtn.innerHTML = LoadMoreBtn
     ElListBtn.onclick = () => {
       LoadMoreEvent(PAGE_NUM + 1)
     }
+  } else {
+    ElListBtn.innerHTML = ''
   }
 }

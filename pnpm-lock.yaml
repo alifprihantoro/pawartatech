@@ -15,6 +15,12 @@ importers:
         specifier: workspace:^
         version: link:pkgs/configs
     devDependencies:
+      '@eslint/eslintrc':
+        specifier: ^3.2.0
+        version: 3.2.0
+      '@eslint/js':
+        specifier: ^9.15.0
+        version: 9.15.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.21.0
         version: 6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
@@ -27,6 +33,9 @@ importers:
       eslint:
         specifier: ^9.14.0
         version: 9.14.0(jiti@1.21.6)
+      globals:
+        specifier: ^15.12.0
+        version: 15.12.0
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -40,7 +49,9 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
 
-  pkgs/Scripts:
+  pkgs/configs: {}
+
+  pkgs/gisqus:
     devDependencies:
       configs:
         specifier: workspace:^
@@ -58,7 +69,32 @@ importers:
         specifier: ^2.1.2
         version: 2.1.4(@types/node@22.7.7)(terser@5.36.0)
 
-  pkgs/configs: {}
+  pkgs/loadmore:
+    devDependencies:
+      configs:
+        specifier: workspace:^
+        version: link:../configs
+      esbuild:
+        specifier: 0.20.1
+        version: 0.20.1
+      eslint-plugin-lit:
+        specifier: ^1.15.0
+        version: 1.15.0(eslint@9.14.0(jiti@1.21.6))
+      eslint-plugin-lit-a11y:
+        specifier: 1.1.0-next.1
+        version: 1.1.0-next.1(eslint@9.14.0(jiti@1.21.6))
+      eslint-plugin-wc:
+        specifier: ^2.2.0
+        version: 2.2.0(eslint@9.14.0(jiti@1.21.6))
+      ui:
+        specifier: workspace:^
+        version: link:../ui
+      vite:
+        specifier: ^5.4.8
+        version: 5.4.11(@types/node@22.7.7)(terser@5.36.0)
+      vitest:
+        specifier: ^2.1.2
+        version: 2.1.4(@types/node@22.7.7)(terser@5.36.0)
 
   pkgs/ui:
     dependencies:
@@ -74,6 +110,9 @@ importers:
       configs:
         specifier: workspace:^
         version: link:../configs
+      mygisqus:
+        specifier: workspace:^
+        version: link:../gisqus
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^1.9.0
@@ -159,9 +198,12 @@ importers:
       astro:
         specifier: ^4.16.12
         version: 4.16.12(@types/node@22.7.7)(rollup@4.26.0)(terser@5.36.0)(typescript@5.6.3)
-      myscripts:
+      loadmore:
         specifier: workspace:^
-        version: link:../../pkgs/Scripts
+        version: link:../../pkgs/loadmore
+      mygisqus:
+        specifier: workspace:^
+        version: link:../../pkgs/gisqus
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.14
@@ -676,12 +718,16 @@ packages:
     resolution: {integrity: sha512-xp5Jirz5DyPYlPiKat8jaq0EmYvDXKKpzTbxXMpT9eqlRJkRKIz9AGMdlvYjih+im+QlhWrpvVjl8IPC/lHlUw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/eslintrc@3.1.0':
-    resolution: {integrity: sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ==}
+  '@eslint/eslintrc@3.2.0':
+    resolution: {integrity: sha512-grOjVNN8P3hjJn/eIETF1wwd12DdnwFDoyceUJLYYdkpbwq3nLi+4fqrTAONx7XDALqlL220wC/RHSC/QTI/0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.14.0':
     resolution: {integrity: sha512-pFoEtFWCPyDOl+C6Ift+wC7Ro89otjigCf5vcuWqWgqNSQbRrpjSvdeE6ofLz4dHmyxD5f7gIdGT4+p36L6Twg==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/js@9.15.0':
+    resolution: {integrity: sha512-tMTqrY+EzbXmKJR5ToI8lxu7jaN5EdmrBFJpQk5JmSlyLsx6o4t27r883K5xsLuCYCpfKBCGswMSWXsM+jB7lg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.4':
@@ -2415,6 +2461,10 @@ packages:
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
+
+  globals@15.12.0:
+    resolution: {integrity: sha512-1+gLErljJFhbOVyaetcwJiJ4+eLe45S2E7P5UiZ9xGfeq3ATQf5DOv9G7MH3gGbKQLkzmNh2DxfZwLdw+j6oTQ==}
     engines: {node: '>=18'}
 
   globby@11.1.0:
@@ -4727,7 +4777,7 @@ snapshots:
 
   '@eslint/core@0.7.0': {}
 
-  '@eslint/eslintrc@3.1.0':
+  '@eslint/eslintrc@3.2.0':
     dependencies:
       ajv: 6.12.6
       debug: 4.3.7
@@ -4742,6 +4792,8 @@ snapshots:
       - supports-color
 
   '@eslint/js@9.14.0': {}
+
+  '@eslint/js@9.15.0': {}
 
   '@eslint/object-schema@2.1.4': {}
 
@@ -5835,7 +5887,7 @@ snapshots:
 
   aria-query@4.2.2:
     dependencies:
-      '@babel/runtime': 7.25.7
+      '@babel/runtime': 7.26.0
       '@babel/runtime-corejs3': 7.25.7
 
   aria-query@5.3.0:
@@ -6467,7 +6519,7 @@ snapshots:
       '@eslint-community/regexpp': 4.12.1
       '@eslint/config-array': 0.18.0
       '@eslint/core': 0.7.0
-      '@eslint/eslintrc': 3.1.0
+      '@eslint/eslintrc': 3.2.0
       '@eslint/js': 9.14.0
       '@eslint/plugin-kit': 0.2.2
       '@humanfs/node': 0.16.6
@@ -6731,6 +6783,8 @@ snapshots:
   globals@11.12.0: {}
 
   globals@14.0.0: {}
+
+  globals@15.12.0: {}
 
   globby@11.1.0:
     dependencies:

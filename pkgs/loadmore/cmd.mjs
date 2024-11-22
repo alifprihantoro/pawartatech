@@ -1,32 +1,21 @@
 import { build } from 'esbuild'
 import { readFileSync, writeFileSync, watch } from 'fs'
+import esbuildConf from 'configs/esbuild.conf.mjs'
 
 const bundleFile = async () => {
   const getPkg = JSON.parse(readFileSync('./package.json'))
-
-  const Opts = {
-    entryPoints: ['src/loadmore/index.ts', 'src/gisqus.ts'],
-    bundle: true,
-    minify: true,
-    outdir: 'dist',
-    platform: 'node',
-    format: 'esm',
-    external: [
-      'vite',
-      ...Object.keys(getPkg.dependencies || {}),
-      ...Object.keys(getPkg.peerDependencies || {}),
-    ],
-  }
-
-  await build(Opts)
-
+  await build(
+    esbuildConf(getPkg, {
+      entryPoints: ['src/index.ts'],
+    }),
+  )
   const replaceHtml = (PATH) => {
     const getResult = readFileSync(PATH, 'utf8')
     const result = getResult.replace(/html\`/gim, '`').replace(/[\n\r]/gim, '')
     writeFileSync(PATH, result)
   }
 
-  replaceHtml('./dist/loadmore/index.js')
+  replaceHtml('./dist/index.js')
 }
 
 const isBuild = process.env.BUILD === 'true'

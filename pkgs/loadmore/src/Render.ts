@@ -6,6 +6,9 @@ type TArgsListContent = {
   updated: { $t: string }
   title: { $t: string }
   summary: { $t: string }
+  media$thumbnail?: {
+    url: string
+  }
   link: { rel: string; href: string }[]
   author: {
     name: { $t: string }
@@ -16,10 +19,13 @@ export type TArgsRender = (Args: TArgsListContent) => string
 export default async function RenderLoadmore(PAGE_NUM: number) {
   const { LIST_CONTET, isNext } = await getFeed(PAGE_NUM)
   const ListEl: string[] = LIST_CONTET.map(
-    ({ link, summary, author, title }: TArgsListContent) => {
+    (ArgsListContent: TArgsListContent) => {
+      const { link, summary, title } = ArgsListContent
+      const IMG = ArgsListContent.media$thumbnail?.url
+
       return Card({
         title: title.$t,
-        img: author[0].gd$image.src,
+        img: IMG,
         spoiler: summary.$t,
         link: link
           .map(({ rel, href }) => {

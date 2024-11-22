@@ -1,5 +1,5 @@
 import comment from './'
-import Scripts from '../../../../node_modules/myscripts/dist/gisqus.js?raw'
+import Scripts from 'mygisqus?raw'
 
 export default {
   render: () => {
